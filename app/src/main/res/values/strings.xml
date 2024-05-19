@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OrderInCafe</string>
+    <string name="welcome">Добро пожаловать,</string>
+    <string name="errorInLogin">Вы не ввели имя</string>
+</resources>
