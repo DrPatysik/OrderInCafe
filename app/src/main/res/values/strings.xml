@@ -2,4 +2,12 @@
     <string name="app_name">OrderInCafe</string>
     <string name="welcome">Добро пожаловать,</string>
     <string name="errorInLogin">Вы не ввели имя</string>
+    <string name="point">!</string>
+    <string name="input_info">Введите ваши данные :</string>
+    <string name="cafe_name">Cafe by the river</string>
+    <string name="info_input_password">Введите пароль из 3 цифр</string>
+    <string name="make_choose">Выберите,пожалуйста!</string>
+    <string name="your_order">вы заказали : </string>
+    <string name="dont_choose">Вы не выбрали напиток!!!</string>
+    <string name="wait">Ожидайте Ваш заказ !</string>
 </resources>

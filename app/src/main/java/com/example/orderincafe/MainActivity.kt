@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
         btnRegistration = findViewById(R.id.buttonRegistration)
         eTxtNumPassword = findViewById(R.id.userNumberPassword)
 
-
         btnRegistration.setOnClickListener {
 
             val strUserName = editTxtUserName.text.toString().uppercase()
@@ -31,15 +30,22 @@ class MainActivity : AppCompatActivity() {
             if (txtLength == 0 ){
                 editTxtUserName.setHint(R.string.errorInLogin).toString()
             }
-            if (lengthUserPassword == 5 && txtLength > 0) {
+            if (lengthUserPassword == 3 && txtLength > 0) {
                 val intent = Intent(this, DrinkSelection::class.java)
+                val intentName = Intent(this,InfoOrder::class.java)
                 intent.putExtra("sendUserName", strUserName)
-                startActivity(intent)
+                intentName.putExtra("sendUserName", strUserName)
+                //??? через arrayIntent не срабатывает,кидает в последнюю активити
+                val arrayIntent = arrayOf(intent,intentName)
+
+                startActivities(arrayIntent)
+
+                //??? пыталась через Bundle,никак
+               /* val bundleName = Bundle()
+                bundleName.putString("sendUserName",strUserName)
+                val intentName = Intent(this,InfoOrder::class.java)
+                intentName.putExtra("Bundle",bundleName)*/
             }
-
         }
-
     }
-
-
 }

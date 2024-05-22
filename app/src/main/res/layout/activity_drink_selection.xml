@@ -27,7 +27,7 @@
         android:id="@+id/textMakeChoose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выберите,пожалуйста!"
+        android:text="@string/make_choose"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -6,6 +6,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderTea"
+    android:paddingStart="60dp"
     android:background="@drawable/tea2">
+
+    <TextView
+        android:id="@+id/txtVChooseTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сделайте,пожалуйста,ваш выбор!"
+        android:textStyle="bold"
+        android:textSize="21sp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/radGroupTea"
+
+        />
+
+    <RadioGroup
+        android:id="@+id/radGroupTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toBottomOf="@id/txtVChooseTea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/radioButtonLem"
+        >
+
+        <RadioButton
+            android:id="@+id/radButGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Зеленый чай"
+            android:textSize="22sp"
+            />
+
+        <RadioButton
+            android:id="@+id/radButBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Черный чай"
+            android:textSize="22sp"/>
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/radioButtonLem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Лимон"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radGroupTea"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButtonSug"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сахар"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioButtonLem"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButtonMilk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Молоко"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioButtonSug"
+        />
+
+    <Button
+        android:id="@+id/buttonOrderTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Заказать"
+        android:textSize="24sp"
+        android:backgroundTint="#187AA6"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButtonMilk"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

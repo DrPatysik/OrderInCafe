@@ -25,7 +25,9 @@ class DrinkSelection : AppCompatActivity() {
 
 
         val msgTxtUserLogin = intent.getStringExtra("sendUserName")
-        editTxtWelcome.setText(getString(R.string.welcome)+ msgTxtUserLogin)
+        editTxtWelcome.text = getString(R.string.welcome) + msgTxtUserLogin + getString(R.string.point)
+
+
 
         btnTea.setOnClickListener {
             val intent1 = Intent(this,OrderTea::class.java)
@@ -36,8 +38,5 @@ class DrinkSelection : AppCompatActivity() {
             val intent2 = Intent(this,OrderCoffee::class.java)
             startActivity(intent2)
         }
-
-
-
     }
 }
