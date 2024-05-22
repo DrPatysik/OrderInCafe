@@ -18,17 +18,8 @@ class InfoOrder : AppCompatActivity() {
         txtVInfo = findViewById(R.id.txtVInfo)
         txtWaitOrder = findViewById(R.id.textViewWait)
 
-       //тут пыталась распаковать Bundle
-        /* val bundleName = intent.getBundleExtra("Bundle")
-        val bundleNameRes = bundleName?.getString("sendUserName")
-        // val msgTxtUserLogin2 = intent.getStringExtra("sendUserName")
-        txtVInfo.text = bundleNameRes.toString()
-        //+ "," + getString(R.string.your_order)*/
-
-         //??? имя дошло,но просто перепрыгнуло в данную активити
         val name = intent.getStringExtra("sendUserName")
-        txtVInfo.text = name.toString()
-
+        txtVInfo.text = name + "," + getString(R.string.your_order)
 
         val cof = intent.getStringExtra("coffee")
         var ice = intent.getStringExtra("ice")

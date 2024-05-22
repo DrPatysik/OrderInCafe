@@ -23,6 +23,9 @@ class OrderCoffee : AppCompatActivity() {
         radButSyrup = findViewById(R.id.radioButtonSyrup)
         btnOrderCoffee = findViewById(R.id.buttonOrderCoffee)
 
+        val msgTxtUserLogin = intent.getStringExtra("sendUserName")
+
+
 
         btnOrderCoffee.setOnClickListener {
            val intentChoose = Intent(this, InfoOrder::class.java)
@@ -35,6 +38,8 @@ class OrderCoffee : AppCompatActivity() {
                 val radioBut: RadioButton = findViewById(radButId)
                 val coffee = radioBut.text.toString()
                 intentChoose.putExtra("coffee", coffee)
+                intentChoose.putExtra("sendUserName", msgTxtUserLogin)
+
             }
 
             // не нашла другого способа выбора,точнее нашла,но почему-то не срабатывал
