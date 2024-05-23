@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //TODO fun initialisation() we need
         editTxtUserName = findViewById(R.id.userLogin)
         btnRegistration = findViewById(R.id.buttonRegistration)
         eTxtNumPassword = findViewById(R.id.userNumberPassword)

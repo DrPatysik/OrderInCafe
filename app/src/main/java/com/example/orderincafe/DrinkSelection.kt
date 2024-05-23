@@ -19,12 +19,14 @@ class DrinkSelection : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drink_selection)
 
+        //TODO fun initialisation() we need
         editTxtWelcome = findViewById(R.id.textWelcome)
         btnTea = findViewById(R.id.imageButtonTea)
         btnCoffee = findViewById(R.id.imageButtonCoffee)
 
 
         val msgTxtUserLogin = intent.getStringExtra("sendUserName")
+
         editTxtWelcome.text = getString(R.string.welcome) + msgTxtUserLogin + getString(R.string.point)
 
 

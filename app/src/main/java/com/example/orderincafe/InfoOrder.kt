@@ -14,6 +14,7 @@ class InfoOrder : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_order)
 
+        //TODO fun initialisation() we need
         txtViewOrder = findViewById(R.id.txtVOrder)
         txtVInfo = findViewById(R.id.txtVInfo)
         txtWaitOrder = findViewById(R.id.textViewWait)
@@ -26,6 +27,7 @@ class InfoOrder : AppCompatActivity() {
         //+ "," + getString(R.string.your_order)*/
 
          //??? имя дошло,но просто перепрыгнуло в данную активити
+        //FIXME no name through DrinkSelection!
         val name = intent.getStringExtra("sendUserName")
         txtVInfo.text = name.toString()
 
@@ -35,6 +37,7 @@ class InfoOrder : AppCompatActivity() {
         var syr = intent.getStringExtra("syrup")
 
         //??? тут пыталась избавиться от надписи null, если не выбираю лед или сироп
+        //FIXME null checking where we accumulate information
         if (ice == null){
             ice = ""
             txtViewOrder.text = cof + "\n" + syr + ice
@@ -46,10 +49,6 @@ class InfoOrder : AppCompatActivity() {
         else{
             txtViewOrder.text = cof + "\n" + ice + "\n"+ syr
         }
-
-
-
-
 
     }
 }

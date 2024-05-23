@@ -15,6 +15,7 @@ class OrderCoffee : AppCompatActivity() {
     private lateinit var radButSyrup:RadioButton
     private lateinit var btnOrderCoffee:Button
     override fun onCreate(savedInstanceState: Bundle?) {
+        //FIXME fun initialisation() we need
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_coffee)
 
@@ -26,10 +27,12 @@ class OrderCoffee : AppCompatActivity() {
 
         btnOrderCoffee.setOnClickListener {
            val intentChoose = Intent(this, InfoOrder::class.java)
+            //TODO String with choices. Only final step is to add this final string to Intent
 
             val radButId = radGroupCoffee.checkedRadioButtonId
             if (radButId == -1) {
                 Toast.makeText(applicationContext,getString(R.string.dont_choose),Toast.LENGTH_LONG).show()
+                //TODO not to start activity!
             }
             else {
                 val radioBut: RadioButton = findViewById(radButId)
