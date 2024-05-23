@@ -33,19 +33,9 @@ class MainActivity : AppCompatActivity() {
             }
             if (lengthUserPassword == 3 && txtLength > 0) {
                 val intent = Intent(this, DrinkSelection::class.java)
-                val intentName = Intent(this,InfoOrder::class.java)
                 intent.putExtra("sendUserName", strUserName)
-                intentName.putExtra("sendUserName", strUserName)
-                //??? через arrayIntent не срабатывает,кидает в последнюю активити
-                val arrayIntent = arrayOf(intent,intentName)
 
-                startActivities(arrayIntent)
-
-                //??? пыталась через Bundle,никак
-               /* val bundleName = Bundle()
-                bundleName.putString("sendUserName",strUserName)
-                val intentName = Intent(this,InfoOrder::class.java)
-                intentName.putExtra("Bundle",bundleName)*/
+                startActivity(intent)
             }
         }
     }

@@ -33,12 +33,17 @@ class DrinkSelection : AppCompatActivity() {
 
         btnTea.setOnClickListener {
             val intent1 = Intent(this,OrderTea::class.java)
+            intent1.putExtra("sendUserName", msgTxtUserLogin)
+
             startActivity(intent1)
         }
 
         btnCoffee.setOnClickListener {
             val intent2 = Intent(this,OrderCoffee::class.java)
+            intent2.putExtra("sendUserName", msgTxtUserLogin)
+
             startActivity(intent2)
         }
+
     }
 }
