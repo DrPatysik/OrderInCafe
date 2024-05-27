@@ -16,10 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TODO fun initialisation() we need
-        editTxtUserName = findViewById(R.id.userLogin)
-        btnRegistration = findViewById(R.id.buttonRegistration)
-        eTxtNumPassword = findViewById(R.id.userNumberPassword)
+        initialisation()
+    }
+    private fun initialisation(){
+        editTxtUserName = findViewById(R.id.editTxtUserName)
+        btnRegistration = findViewById(R.id.btnRegistration)
+        eTxtNumPassword = findViewById(R.id.eTxtNumPassword)
 
         btnRegistration.setOnClickListener {
 

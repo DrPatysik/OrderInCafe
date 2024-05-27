@@ -10,7 +10,7 @@
     android:padding="14dp">
 
     <TextView
-        android:id="@+id/textWelcome"
+        android:id="@+id/editTxtWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/welcome"
@@ -31,12 +31,12 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textWelcome"
+        app:layout_constraintTop_toBottomOf="@id/editTxtWelcome"
         android:layout_marginTop="50dp"
         />
 
     <ImageButton
-        android:id="@+id/imageButtonTea"
+        android:id="@+id/btnTea"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="60dp"
@@ -47,13 +47,13 @@
         />
 
     <ImageButton
-        android:id="@+id/imageButtonCoffee"
+        android:id="@+id/btnCoffee"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButtonTea"
+        app:layout_constraintTop_toBottomOf="@+id/btnTea"
         android:background="@drawable/coffee"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

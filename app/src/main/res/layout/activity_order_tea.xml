@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@id/txtVChooseTea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/radioButtonLem"
+        app:layout_constraintBottom_toTopOf="@id/radioButLem"
         >
 
         <RadioButton
@@ -53,7 +53,7 @@
     </RadioGroup>
 
     <RadioButton
-        android:id="@+id/radioButtonLem"
+        android:id="@+id/radioButLem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Лимон"
@@ -64,29 +64,29 @@
         />
 
     <RadioButton
-        android:id="@+id/radioButtonSug"
+        android:id="@+id/radioButSug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Сахар"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/radioButtonLem"
+        app:layout_constraintTop_toBottomOf="@id/radioButLem"
         />
 
     <RadioButton
-        android:id="@+id/radioButtonMilk"
+        android:id="@+id/radioButMilk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Молоко"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/radioButtonSug"
+        app:layout_constraintTop_toBottomOf="@id/radioButSug"
         />
 
     <Button
-        android:id="@+id/buttonOrderTea"
+        android:id="@+id/btnOrderTea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Заказать"
@@ -96,7 +96,7 @@
         android:layout_marginEnd="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonMilk"
+        app:layout_constraintTop_toBottomOf="@+id/radioButMilk"
         />
 
 

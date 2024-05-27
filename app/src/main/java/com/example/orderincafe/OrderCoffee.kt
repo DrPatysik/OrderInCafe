@@ -9,52 +9,59 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class OrderCoffee : AppCompatActivity() {
-    
-    private lateinit var radGroupCoffee:RadioGroup
-    private lateinit var radButIce:RadioButton
-    private lateinit var radButSyrup:RadioButton
-    private lateinit var btnOrderCoffee:Button
+
+    private lateinit var radGroupCoffee: RadioGroup
+    private lateinit var radButIce: RadioButton
+    private lateinit var radButSyrup: RadioButton
+    private lateinit var btnOrderCoffee: Button
     override fun onCreate(savedInstanceState: Bundle?) {
-        //FIXME fun initialisation() we need
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_coffee)
 
+        initialisation()
+    }
+    private fun initialisation(){
         radGroupCoffee = findViewById(R.id.radGroupCoffee)
         radButIce = findViewById(R.id.radioButtonIce)
         radButSyrup = findViewById(R.id.radioButtonSyrup)
         btnOrderCoffee = findViewById(R.id.buttonOrderCoffee)
 
-        val msgTxtUserLogin = intent.getStringExtra("sendUserName")
-
-
+        val messageTxtUserName = intent.getStringExtra("sendUserLogin")
 
         btnOrderCoffee.setOnClickListener {
-           val intentChoose = Intent(this, InfoOrder::class.java)
-            //TODO String with choices. Only final step is to add this final string to Intent
+            var userOrder: Array<String> = arrayOf()
+            val intentChoose = Intent(this, InfoOrder::class.java)
 
             val radButId = radGroupCoffee.checkedRadioButtonId
             if (radButId == -1) {
-                Toast.makeText(applicationContext,getString(R.string.dont_choose),Toast.LENGTH_LONG).show()
-                //TODO not to start activity!
-            }
-            else {
+                Toast.makeText(
+                    applicationContext,
+                    getString(R.string.dont_choose),
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
                 val radioBut: RadioButton = findViewById(radButId)
                 val coffee = radioBut.text.toString()
-                intentChoose.putExtra("coffee", coffee)
-                intentChoose.putExtra("sendUserName", msgTxtUserLogin)
-
+                userOrder += coffee
             }
 
-            // не нашла другого способа выбора,точнее нашла,но почему-то не срабатывал
-            if (radButIce.isChecked ) {
+            if (radButIce.isChecked) {
                 val ice = radButIce.text.toString()
-                intentChoose.putExtra("ice", ice)
+                if (radButIce != null) userOrder += "\n" + ice
+            } else {
+                radButIce == null
             }
 
-            if (radButSyrup.isChecked){
+            if (radButSyrup.isChecked) {
                 val syrup = radButSyrup.text.toString()
-                intentChoose.putExtra("syrup",syrup)
+                if (radButSyrup != null) userOrder += "\n" + syrup
+            } else {
+                radButSyrup == null
             }
+
+            intentChoose.putExtra("userName", messageTxtUserName)
+            if (radButId != -1) intentChoose.putExtra("userOrder", userOrder)
+
             startActivity(intentChoose)
         }
     }
