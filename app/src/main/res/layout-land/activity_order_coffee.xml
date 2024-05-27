@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderCoffee"
+    android:background="@drawable/coffee_land"
+    android:paddingStart="50dp"
+    >
+
+    <TextView
+        android:id="@+id/txtVChooseCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Сделайте,пожалуйста,ваш выбор!"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/radGroupCoffee"
+
+        />
+
+    <RadioGroup
+        android:id="@+id/radGroupCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/txtVChooseCoffee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/radioButtonIce"
+        >
+
+        <RadioButton
+            android:id="@+id/radButAmericano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Американо"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            />
+
+        <RadioButton
+            android:id="@+id/radButCappuccino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Капучино"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+
+        <RadioButton
+            android:id="@+id/radButLatte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Латте"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+
+        <RadioButton
+            android:id="@+id/radButEspresso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Эспрессо"
+            android:textColor="@color/white"
+            android:textSize="24sp"/>
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/radioButtonIce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Лед"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radGroupCoffee"
+        />
+
+    <RadioButton
+        android:id="@+id/radioButtonSyrup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Сироп(карамель)"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toStartOf="@id/buttonOrderCoffee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioButtonIce"
+        />
+
+
+    <Button
+        android:id="@+id/buttonOrderCoffee"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#718559"
+        android:text="Заказать"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/radioButtonSyrup" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
