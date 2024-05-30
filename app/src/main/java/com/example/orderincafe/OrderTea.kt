@@ -7,32 +7,33 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.orderincafe.databinding.ActivityOrderTeaBinding
 
 class OrderTea : AppCompatActivity() {
-    private lateinit var radGroupTea:RadioGroup
+    /*private lateinit var radGroupTea:RadioGroup
     private lateinit var radioButLem:RadioButton
     private lateinit var radioButSug:RadioButton
     private lateinit var radioButMilk:RadioButton
-    private lateinit var btnOrderTea:Button
+    private lateinit var btnOrderTea:Button*/
+    private lateinit var binding:ActivityOrderTeaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_order_tea)
+        binding = ActivityOrderTeaBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         initialisation()
     }
     private fun initialisation(){
-        radGroupTea = findViewById(R.id.radGroupTea)
+        /*radGroupTea = findViewById(R.id.radGroupTea)
         radioButLem = findViewById(R.id.radioButLem)
         radioButSug = findViewById(R.id.radioButSug)
         radioButMilk = findViewById(R.id.radioButMilk)
-        btnOrderTea = findViewById(R.id.btnOrderTea)
+        btnOrderTea = findViewById(R.id.btnOrderTea)*/
 
-        val messageTxtUserName = intent.getStringExtra("sendUserLogin")
-
-        btnOrderTea.setOnClickListener {
+        binding.btnOrderTea.setOnClickListener {
             var userOrder: Array<String> = arrayOf()
 
-            val radButId = radGroupTea.checkedRadioButtonId
+            val radButId = binding.radGroupTea.checkedRadioButtonId
             if (radButId == -1) {
                 Toast.makeText(
                     applicationContext,
@@ -45,27 +46,22 @@ class OrderTea : AppCompatActivity() {
                 userOrder += tea
             }
 
-            if (radioButLem.isChecked) {
-                val lemon = radioButLem.text.toString()
-                if (radioButLem != null) userOrder += "\n" + lemon
-            } else {
-                radioButLem == null
+            if (binding.radioButLem.isChecked) {
+                val lemon = binding.radioButLem.text.toString()
+                if (binding.radioButLem != null) userOrder += "\n" + lemon
             }
 
-            if (radioButSug.isChecked) {
-                val sugar = radioButSug.text.toString()
-                if (radioButSug != null) userOrder += "\n" + sugar
-            } else {
-                radioButSug == null
+            if (binding.radioButSug.isChecked) {
+                val sugar = binding.radioButSug.text.toString()
+                if (binding.radioButSug != null) userOrder += "\n" + sugar
             }
 
-            if (radioButMilk.isChecked) {
-                val milk = radioButMilk.text.toString()
-                if (radioButMilk != null) userOrder += "\n" + milk
-            } else {
-                radioButMilk == null
+            if (binding.radioButMilk.isChecked) {
+                val milk = binding.radioButMilk.text.toString()
+                if (binding.radioButMilk != null) userOrder += "\n" + milk
             }
 
+            val messageTxtUserName = intent.getStringExtra("sendUserLogin")
             val intentChoose = Intent(this, InfoOrder::class.java)
             if (radButId != -1){
                 intentChoose.putExtra("userOrder2", userOrder)
