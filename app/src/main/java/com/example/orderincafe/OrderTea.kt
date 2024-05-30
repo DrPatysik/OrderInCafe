@@ -31,7 +31,6 @@ class OrderTea : AppCompatActivity() {
 
         btnOrderTea.setOnClickListener {
             var userOrder: Array<String> = arrayOf()
-            val intentChoose = Intent(this, InfoOrder::class.java)
 
             val radButId = radGroupTea.checkedRadioButtonId
             if (radButId == -1) {
@@ -67,10 +66,11 @@ class OrderTea : AppCompatActivity() {
                 radioButMilk == null
             }
 
-            intentChoose.putExtra("userName2", messageTxtUserName)
-            if (radButId != -1) intentChoose.putExtra("userOrder2", userOrder)
-
-            startActivity(intentChoose)
+            val intentChoose = Intent(this, InfoOrder::class.java)
+            if (radButId != -1){
+                intentChoose.putExtra("userOrder2", userOrder)
+                intentChoose.putExtra("userName2", messageTxtUserName)
+                startActivity(intentChoose) }
         }
     }
 }

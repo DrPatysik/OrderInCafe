@@ -2,6 +2,7 @@ package com.example.orderincafe
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
@@ -30,15 +31,11 @@ class OrderCoffee : AppCompatActivity() {
 
         btnOrderCoffee.setOnClickListener {
             var userOrder: Array<String> = arrayOf()
-            val intentChoose = Intent(this, InfoOrder::class.java)
 
             val radButId = radGroupCoffee.checkedRadioButtonId
             if (radButId == -1) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.dont_choose),
-                    Toast.LENGTH_LONG
-                ).show()
+                val toast = Toast.makeText(applicationContext, getString(R.string.dont_choose), Toast.LENGTH_LONG)
+                    toast.show()
             } else {
                 val radioBut: RadioButton = findViewById(radButId)
                 val coffee = radioBut.text.toString()
@@ -59,10 +56,11 @@ class OrderCoffee : AppCompatActivity() {
                 radButSyrup == null
             }
 
-            intentChoose.putExtra("userName", messageTxtUserName)
-            if (radButId != -1) intentChoose.putExtra("userOrder", userOrder)
-
-            startActivity(intentChoose)
+            val intentChoose = Intent(this, InfoOrder::class.java)
+            if (radButId != -1){
+                intentChoose.putExtra("userOrder", userOrder)
+                intentChoose.putExtra("userName", messageTxtUserName)
+                startActivity(intentChoose) }
         }
     }
 }
